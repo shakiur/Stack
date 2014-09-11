@@ -14,5 +14,6 @@ class Stack {
 		bool remove(Elem *);
 		bool insertAfter(Elem *, int);
 		Elem * findMthToLastElem(int m);
+		int countElem();
 
 };

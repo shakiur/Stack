@@ -72,3 +72,36 @@ bool Stack::remove(Elem * rmvElem) {
 	return false;
 }
 
+Elem * Stack::findMthToLastElem(int dist_from_last) {
+
+	int total_elem = countElem();
+	int dist_from_first = total_elem - dist_from_last;
+
+	Elem * traverse_elem = head;
+
+	int cur_dist = 1;
+
+	while(traverse_elem) {
+
+		if(cur_dist == dist_from_first)
+			return traverse_elem;
+
+		traverse_elem = traverse_elem->next;
+		cur_dist++;
+	}
+
+	return NULL;
+	
+}
+
+int Stack::countElem() {
+	int last_elem = 0;
+	Elem * traverse_elem = head;
+
+	while(traverse_elem) {
+		traverse_elem = traverse_elem->next;
+		last_elem++;
+	}
+
+	return last_elem;
+}

@@ -17,4 +17,7 @@ int main() {
 
 	test_stack.traverseStack();
 
+	int m = 0;
+	Elem * temp_elem = test_stack.findMthToLastElem(m);
+	cout << m << " Elems from last: " << temp_elem->data << endl;
 }
